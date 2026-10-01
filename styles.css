@@ -18,3 +18,8 @@
 
 .contact-email-grid .phone-card{grid-column:1/-1;min-height:130px;background:#eaf7fc;border-color:#b9ddec}.contact-email-grid .phone-card strong{font-size:1.25rem;color:var(--navy)}
 @media(max-width:700px){.contact-email-grid .phone-card{grid-column:auto}}
+
+.service-request-cta{max-width:var(--max);margin:0 auto 70px;padding:38px 42px;border-radius:24px;background:linear-gradient(135deg,var(--mist),#f7fbfd);display:flex;align-items:center;justify-content:space-between;gap:32px}.service-request-cta h2{font-size:clamp(1.65rem,2.7vw,2.35rem);margin-bottom:10px}.service-request-cta p:last-child{margin:0;color:var(--muted)}.service-request-cta .eyebrow{margin-bottom:10px}.service-request-cta .button{flex:0 0 auto}@media(max-width:700px){.service-request-cta{margin:0 24px 58px;padding:30px 24px;align-items:flex-start;flex-direction:column}.service-request-cta .button{width:100%;text-align:center}}
+
+/* Orden y énfasis de las opciones finales del menú */
+.main-nav a[href="contacto.html"]{order:90;padding:10px 0!important;border-radius:0!important;background:transparent!important;color:inherit!important}.main-nav a[href="contacto.html"]:hover{color:var(--cyan)!important}.main-nav a[href="solicitar-servicio.html"]{order:100;padding:11px 19px!important;border-radius:999px;background:var(--navy)!important;color:#fff!important}.main-nav a[href="solicitar-servicio.html"]:hover{background:var(--blue)!important;color:#fff!important}
