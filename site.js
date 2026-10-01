@@ -10,28 +10,26 @@ nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
   button?.setAttribute('aria-expanded','false');
 }));
 
-const page=location.pathname.split('/').pop()||'index.html';
+const cleanPath=location.pathname.replace(/\/+$/,'');
+const page=(cleanPath.split('/').pop()||'index').replace(/\.html$/,'');
 const pageHero=document.querySelector('.page-hero');
 if(pageHero){
   const photoByPage={
-    'nosotros.html':'photo-company',
-    'servicios.html':'photo-services',
-    'servicio-aseo.html':'photo-aseo',
-    'servicio-mantenimiento.html':'photo-mantenimiento',
-    'servicio-especiales.html':'photo-especiales',
-    'facility-management.html':'photo-facility',
-    'productos.html':'photo-productos',
-    'operamos.html':'photo-operamos',
-    'sostenibilidad.html':'photo-green',
-    'contacto.html':'photo-contacto'
+    'nosotros':'photo-company',
+    'servicios':'photo-services',
+    'servicio-aseo':'photo-aseo',
+    'servicio-mantenimiento':'photo-mantenimiento',
+    'operamos':'photo-operamos',
+    'sostenibilidad':'photo-green',
+    'contacto':'photo-contacto'
   };
   const photoClass=photoByPage[page]||'photo-company';
   pageHero.classList.add('has-photo',photoClass);
 }
 
-if(page==='index.html'){
+if(page==='index'){
   const selector=document.querySelector('.home-selector');
   if(selector&&!selector.querySelector('.home-request')){
-    selector.insertAdjacentHTML('beforeend','<div class="home-request"><div><p class="eyebrow">Solicitud de servicios</p><h3>¿Ya sabes qué necesita tu espacio?</h3><p>Pide aquí tu servicio de aseo o remodelación interna.</p></div><a class="button" href="solicitar-servicio.html">Solicitar servicio</a></div>');
+    selector.insertAdjacentHTML('beforeend','<div class="home-request"><div><p class="eyebrow">Solicitud de servicios</p><h3>¿Ya sabes qué necesita tu espacio?</h3><p>Pide aquí tu servicio de aseo o remodelación interna.</p></div><a class="button" href="/solicitar-servicio/">Solicitar servicio</a></div>');
   }
 }
